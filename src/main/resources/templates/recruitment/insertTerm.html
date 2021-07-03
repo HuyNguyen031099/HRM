@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<title>Recruitment insert</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<style>
+body {
+	background-color: #f3f3f3;
+}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="container-bg-white">
+			<h3>THÊM ĐỢT TUYỂN DỤNG</h3>
+			<div>
+				<form th:action="@{/recruitment/insert-term}" method="POST"
+					th:object="${recruitmentTerm}">
+					<div>
+						<h5 style="margin: 20px 0 30px 0;">Thông tin đợt tuyển tuyển
+							dụng</h5>
+
+						<div class="row form-group">
+							<div class="col-3">
+								<label for="term_name"> Tên đợt tuyển dụng </label>
+							</div>
+							<div class="col-9">
+								<input th:field="*{name}" id="term_name" type="text"
+									class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-3">
+								<label for="term_code"> Mã đợt tuyển dụng </label>
+							</div>
+							<div class="col-9">
+								<input th:field="*{id}" id="term_code" type="text"
+									class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-3">
+								<label for="term_description"> Mô tả </label>
+							</div>
+							<div class="col-9">
+								<input th:field="*{description}" id="term_description"
+									type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-3">
+								<label for="term_start_date"> Ngày bắt đầu </label>
+
+							</div>
+							<div class="col-9">
+								<input th:field="*{start_date}" id="term_start_date" type="date"
+									class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-3">
+								<label for="term_end_date"> Ngày kết thúc </label>
+
+							</div>
+							<div class="col-9">
+								<input th:field="*{end_date}" id="term_end_date" type="date"
+									class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="container-bg-white"
+						style="display: flex; justify-content: flex-end;">
+						<button type="submit" class="btn btn-info">Xác
+							nhận</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
